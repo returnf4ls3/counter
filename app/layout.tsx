@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
+import AuthContext from "./context/AuthContext";
+import ClientOnly from "./components/ClientOnly";
+import Navbar from "./components/navbar/Navbar";
 
-const inter = Inter({ subsets: ["latin"] });
+const poppins = Poppins({ subsets: ["latin"], weight: "400" });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,8 +18,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="ko">
+      <body className={poppins.className}>
+        <div className="dark:bg-black transition-colors">
+          <AuthContext>
+            <ClientOnly>
+              <Navbar />
+            </ClientOnly>
+            {children}
+          </AuthContext>
+        </div>
+      </body>
     </html>
   );
 }
