@@ -10,7 +10,7 @@ const Custom404 = () => {
     useEffect(() => {
         if (darkMode) document.documentElement.classList.add('dark');
         else document.documentElement.classList.remove('dark');
-    }, [darkMode]);
+    }, [darkMode]); 
 
   return (
     <div className='flex justify-center items-center min-h-screen dark:bg-black dark:text-white'>
