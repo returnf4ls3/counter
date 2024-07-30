@@ -12,7 +12,7 @@ export async function GET(
     { params }: { params: IParams }
 ) {
     const targetId = params.targetId;
-
+    
     const count = await prisma.count.findUnique({
         where: {
             number: targetId
