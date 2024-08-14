@@ -6,9 +6,10 @@ import useSettings from "../hooks/useSettings";
 interface IconButtonProps {
     icon: IconType;
     onClick: () => void;
+    className?: string;
 }
 
-export const IconButton = ({ icon: Icon, onClick }: IconButtonProps) => {
+export const IconButton = ({ icon: Icon, onClick, className }: IconButtonProps) => {
     const darkMode = useSettings((state) => state.darkMode);
 
     return ( 
@@ -17,7 +18,7 @@ export const IconButton = ({ icon: Icon, onClick }: IconButtonProps) => {
                 <Icon
                     size={34}
                     color={darkMode ? 'white' : 'black'}
-                    className="relatvie"
+                    className={`relative ${className}`}
                 />
             )}
         </button>
