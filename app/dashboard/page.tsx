@@ -30,7 +30,7 @@ const DashboardPage = () => {
 
     return (
         <div className="flex justify-center items-center min-h-screen dark:bg-black dark:text-white">
-            yes
+            dashboard
         </div>
     );
 }
